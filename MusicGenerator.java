@@ -1,3 +1,10 @@
+/**
+ * MusicGenerator : A music generator that makes pleasing music based on western music theory
+ * @author Dhaval Kapil
+ * MIT license http://www.opensource.org/licenses/mit-license.php
+ */
+
+
 import javax.sound.midi.*;
 import java.io.*;
 

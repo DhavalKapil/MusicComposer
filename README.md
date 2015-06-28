@@ -16,7 +16,7 @@ It simply prints out the notes on the console, plays it and saves it to an exter
   
 ## Usage:
 
-```java MusicGenerator &lt;key&gt; &lt;scale&gt; &lt;notes&gt; &lt;file&gt;```
+```java MusicGenerator <key> <scale> <notes> <file>```
 
 key of scale : A, B, C, D, E, F, G (either case) sharps (#) also accepted (eg. C#)
 

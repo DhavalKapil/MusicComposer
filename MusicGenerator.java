@@ -29,7 +29,7 @@ public class MusicGenerator
     
     public static void main(String[] args)
     {   if(args.length!=4)
-        {   System.out.println("ERROR: usage:\n<key of scale> <scale type> <no. of notes> <file>");
+        {   System.out.println("ERROR: usage:\njava MusicGenerator <key of scale> <scale type> <no. of notes> <file>");
             System.exit(0);
         }
         try
@@ -41,8 +41,8 @@ public class MusicGenerator
                 notesAllowed = new int[22];
             noOfNotes =  Integer.parseInt(args[2]); 
             file = args[3];
-	    if(!file.endsWith(".mid"))
-		file += ".mid";
+            if(!file.endsWith(".mid"))
+                file += ".mid";
             checkKey();
             checkScale();
             allowNotes();
@@ -117,7 +117,6 @@ public class MusicGenerator
                 notesAllowed[i] = locrian[i] + offset;
             else if(scale.equals("pentatonic"))
                 notesAllowed[i] = pentatonic[i] + offset;
-                
         }
     }
     
@@ -125,10 +124,10 @@ public class MusicGenerator
     {   sequence = new int[noOfNotes];
         for(int i = 0;i<sequence.length;i++)
         {   sequence[i] =  notesAllowed[(int)(Math.random()*notesAllowed.length)];
-	    if(i!=0)
-		if(sequence[i]==sequence[i-1])
-		    i--;     
-	}
+            if(i!=0)
+                if(sequence[i]==sequence[i-1])
+                    i--;     
+        }
     }
     
     private static void printSequence()

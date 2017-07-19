@@ -18,6 +18,7 @@ public class MusicGenerator
     private final static int[] minor = {48, 50, 51, 53, 55, 56, 58, 60, 62, 63, 65, 66, 68, 70, 72, 74, 75, 77, 79, 80, 82, 84};
     private final static int[] locrian ={48, 49, 51, 53, 54, 56, 58, 60, 61, 63, 65, 66, 68, 70, 72, 73, 75, 77, 78, 80, 82, 84};
     private final static int[] pentatonic = {48, 50, 52, 55, 57, 60, 62, 64, 67, 69, 72, 74, 76, 79, 81, 84};
+    private final static int[] major_blues = {48, 50, 51, 52, 55, 57, 60, 62, 63, 64, 67, 69, 72, 74, 75, 76, 79, 81, 84};
     private static int[] notesAllowed;
     private static int[] sequence;
     
@@ -37,6 +38,8 @@ public class MusicGenerator
             scale = args[1].toLowerCase();
             if(scale.equals("pentatonic"))
                 notesAllowed = new int[16];
+            else if(scale.equals("major_blues"))
+                notesAllowed = new int[19];
             else
                 notesAllowed = new int[22];
             noOfNotes =  Integer.parseInt(args[2]); 
@@ -96,7 +99,8 @@ public class MusicGenerator
                             if(!scale.equals("minor"))
                                 if(!scale.equals("locrian"))
                                     if(!scale.equals("pentatonic"))
-                                        throw new Exception("Invalid scale");
+                                        if(!scale.equals("major_blues"))
+                                            throw new Exception("Invalid scale");
     }
     
     private static void allowNotes()
@@ -117,6 +121,8 @@ public class MusicGenerator
                 notesAllowed[i] = locrian[i] + offset;
             else if(scale.equals("pentatonic"))
                 notesAllowed[i] = pentatonic[i] + offset;
+            else if(scale.equals("major_blues"))
+                notesAllowed[i] = major_blues[i] + offset;
         }
     }
     
